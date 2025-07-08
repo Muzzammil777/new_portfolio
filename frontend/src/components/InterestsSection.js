@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { SparklesIcon, CogIcon, LightBulbIcon, RocketLaunchIcon } from '@heroicons/react/outline';
+import { SparklesIcon, CogIcon, LightBulbIcon, FireIcon } from '@heroicons/react/outline';
 
 const InterestsSection = () => {
   const [ref, inView] = useInView({
@@ -32,7 +32,7 @@ const InterestsSection = () => {
       topics: ["Tech Trends", "Open Source", "Research Papers", "Hackathons"]
     },
     {
-      icon: RocketLaunchIcon,
+      icon: FireIcon,
       title: "Emerging Technologies",
       description: "Fascinated by breakthrough technologies that have the potential to reshape industries and human experiences.",
       color: "from-green-400 to-emerald-500",

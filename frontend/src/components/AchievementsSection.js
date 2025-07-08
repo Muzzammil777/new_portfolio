@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { TrophyIcon, AwardIcon, BadgeCheckIcon, SparklesIcon } from '@heroicons/react/outline';
+import { StarIcon, BadgeCheckIcon, SparklesIcon, FireIcon } from '@heroicons/react/outline';
 
 const AchievementsSection = () => {
   const [ref, inView] = useInView({
@@ -15,7 +15,7 @@ const AchievementsSection = () => {
       organization: "JJ College of Engineering and Technology",
       date: "February 2024",
       description: "Won first place in competitive programming contest focusing on algorithm optimization and debugging skills.",
-      icon: TrophyIcon,
+      icon: StarIcon,
       color: "from-yellow-400 to-orange-500",
       category: "Competition"
     },
@@ -24,7 +24,7 @@ const AchievementsSection = () => {
       organization: "MKCE",
       date: "2023-2024",
       description: "Maintained excellent academic standing with CGPA of 7.67 throughout the academic year.",
-      icon: AwardIcon,
+      icon: StarIcon,
       color: "from-blue-400 to-purple-500",
       category: "Academic"
     },

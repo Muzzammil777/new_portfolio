@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { MailIcon, PhoneIcon, LocationMarkerIcon, SendIcon } from '@heroicons/react/outline';
+import { MailIcon, PhoneIcon, LocationMarkerIcon, PaperAirplaneIcon } from '@heroicons/react/outline';
 import { Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 
 const ContactSection = () => {
@@ -288,7 +288,7 @@ const ContactSection = () => {
                       </>
                     ) : (
                       <>
-                        <SendIcon className="w-5 h-5" />
+                        <PaperAirplaneIcon className="w-5 h-5" />
                         Send Message
                       </>
                     )}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { CodeIcon, LightBulbIcon, RocketLaunchIcon } from '@heroicons/react/outline';
+import { CodeIcon, LightBulbIcon, SparklesIcon } from '@heroicons/react/outline';
 
 const AboutSection = () => {
   const [ref, inView] = useInView({
@@ -43,7 +43,7 @@ const AboutSection = () => {
       description: "Analytical thinking to solve complex challenges"
     },
     {
-      icon: RocketLaunchIcon,
+      icon: SparklesIcon,
       title: "Innovation",
       description: "Always exploring new technologies and methodologies"
     }
