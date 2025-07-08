@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { MailIcon, PhoneIcon, LocationMarkerIcon, PaperAirplaneIcon } from '@heroicons/react/outline';
-import { Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  MailIcon,
+  PhoneIcon,
+  LocationMarkerIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/react/outline";
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 const ContactSection = () => {
   const [ref, inView] = useInView({
@@ -11,35 +16,37 @@ const ContactSection = () => {
   });
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
-      setSubmitMessage('Thank you for your message! I\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setSubmitMessage(
+        "Thank you for your message! I'll get back to you soon."
+      );
+      setFormData({ name: "", email: "", subject: "", message: "" });
       setIsSubmitting(false);
-      
+
       // Clear message after 5 seconds
-      setTimeout(() => setSubmitMessage(''), 5000);
+      setTimeout(() => setSubmitMessage(""), 5000);
     }, 1000);
   };
 
@@ -47,51 +54,51 @@ const ContactSection = () => {
     {
       icon: MailIcon,
       label: "Email",
-      value: "mohammed.muzzammil@email.com",
-      href: "mailto:mohammed.muzzammil@email.com",
-      color: "from-blue-400 to-cyan-500"
+      value: "mohammedmuzzammil.offic@gmail.com",
+      href: "mailto:mohammedmuzzammil.offic@gmail.com",
+      color: "from-blue-400 to-cyan-500",
     },
     {
       icon: PhoneIcon,
       label: "Phone",
       value: "+91 9876543210",
       href: "tel:+919876543210",
-      color: "from-green-400 to-emerald-500"
+      color: "from-green-400 to-emerald-500",
     },
     {
       icon: LocationMarkerIcon,
       label: "Location",
       value: "Tamil Nadu, India",
       href: "https://maps.google.com",
-      color: "from-purple-400 to-pink-500"
-    }
+      color: "from-purple-400 to-pink-500",
+    },
   ];
 
   const socialLinks = [
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/mohammed-muzzammil",
-      color: "hover:text-white"
+      href: "https://github.com/Muzzammil777",
+      color: "hover:text-white",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/mohammed-muzzammil",
-      color: "hover:text-blue-400"
+      href: "https://www.linkedin.com/in/mohammed-muzzammil-a-k",
+      color: "hover:text-blue-400",
     },
     {
       icon: Mail,
       label: "Email",
       href: "mailto:mohammed.muzzammil@email.com",
-      color: "hover:text-red-400"
+      color: "hover:text-red-400",
     },
     {
       icon: MessageCircle,
       label: "WhatsApp",
       href: "https://wa.me/919876543210",
-      color: "hover:text-green-400"
-    }
+      color: "hover:text-green-400",
+    },
   ];
 
   const containerVariants = {
@@ -131,7 +138,8 @@ const ContactSection = () => {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mx-auto mb-4" />
             <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities, innovative projects, or just having a chat about technology
+              I'm always open to discussing new opportunities, innovative
+              projects, or just having a chat about technology
             </p>
           </motion.div>
 
@@ -139,10 +147,13 @@ const ContactSection = () => {
             {/* Contact Information */}
             <motion.div variants={itemVariants} className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Let's Connect
+                </h3>
                 <p className="text-zinc-300 leading-relaxed mb-8">
-                  Whether you have a project in mind, want to collaborate, or simply want to say hello, 
-                  I'd love to hear from you. Let's create something amazing together!
+                  Whether you have a project in mind, want to collaborate, or
+                  simply want to say hello, I'd love to hear from you. Let's
+                  create something amazing together!
                 </p>
 
                 <div className="space-y-4">
@@ -152,20 +163,26 @@ const ContactSection = () => {
                       href={info.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.05,
-                        boxShadow: "0 10px 30px rgba(59, 130, 246, 0.2)"
+                        boxShadow: "0 10px 30px rgba(59, 130, 246, 0.2)",
                       }}
                       className="flex items-center gap-4 p-4 bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-lg hover:border-blue-400 transition-all duration-300 group"
                     >
-                      <div className={`p-3 rounded-lg bg-gradient-to-r ${info.color} bg-opacity-20`}>
-                        <info.icon className={`w-6 h-6 bg-gradient-to-r ${info.color} bg-clip-text text-transparent`} />
+                      <div
+                        className={`p-3 rounded-lg bg-gradient-to-r ${info.color} bg-opacity-20`}
+                      >
+                        <info.icon
+                          className={`w-6 h-6 bg-gradient-to-r ${info.color} bg-clip-text text-transparent`}
+                        />
                       </div>
                       <div>
                         <div className="font-semibold text-white group-hover:text-blue-400 transition-colors">
                           {info.label}
                         </div>
-                        <div className="text-zinc-400 text-sm">{info.value}</div>
+                        <div className="text-zinc-400 text-sm">
+                          {info.value}
+                        </div>
                       </div>
                     </motion.a>
                   ))}
@@ -173,7 +190,9 @@ const ContactSection = () => {
 
                 {/* Social Links */}
                 <div className="mt-8">
-                  <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+                  <h4 className="text-lg font-semibold text-white mb-4">
+                    Follow Me
+                  </h4>
                   <div className="flex gap-4">
                     {socialLinks.map((link, index) => (
                       <motion.a
@@ -181,9 +200,9 @@ const ContactSection = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ 
+                        whileHover={{
                           scale: 1.2,
-                          boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
+                          boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
                         }}
                         className={`p-3 bg-zinc-800 hover:bg-zinc-700 rounded-full transition-all duration-300 text-zinc-400 ${link.color}`}
                       >
@@ -198,8 +217,10 @@ const ContactSection = () => {
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
               <div className="bg-zinc-800/50 backdrop-blur-sm border border-zinc-700 rounded-lg p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
-                
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Send Message
+                </h3>
+
                 {submitMessage && (
                   <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -278,7 +299,7 @@ const ContactSection = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className={`w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-300 ${
-                      isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                      isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                   >
                     {isSubmitting ? (
